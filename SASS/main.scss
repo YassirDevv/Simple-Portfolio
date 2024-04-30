@@ -1,0 +1,60 @@
+@import "./config", "./home","./menu","./about","./projects", "./contact.scss","./responsive";
+
+body{
+    background-color: $primary-color;
+    color:set-text-color($primary-color);
+    height:100vh;   // 100% of view height
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1;   // Interligne --> (Ms word) 
+}
+
+h1, h2 h3 {
+    font-weight: 400;
+}
+
+.text-secondary{
+    color: $secondary-color;
+}
+
+a{
+    color: set-text-color($primary-color);
+    text-decoration:none;
+}
+
+header{
+    position:fixed;   // Always on the top of the page
+    z-index: 2;     // It affects the order of the stacking order of its child elements --> who appears on top of the stack (z axis)
+    width: 100%;
+    padding: 1rem;  // rem --> based on the font-size of the body (default size of body 16 pixels) so 1rem = 16 pixels in this case. ||| em --> is based on the font-size of the 'parent'
+}
+
+main{
+    height:100%;
+    width:100%;
+
+    .social-icons{
+        position: fixed;
+        bottom:1rem;
+        left:1rem;
+
+        a{
+            padding:0.4rem;
+            @include transition-ease;
+
+            &:hover{
+                color:$secondary-color;
+            }
+        }
+    }
+}
+
+
+footer{
+    font-size: 1rem;
+    position: fixed; // Cuz we want that to be on the bottom
+    bottom: 0.4rem;
+    right:1rem;
+    text-align: right;
+    padding:1rem;
+    color:set-text-color($primary-color);
+}

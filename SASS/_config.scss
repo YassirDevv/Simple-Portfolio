@@ -1,0 +1,63 @@
+$primary-color: #272727; //dark grey !!
+$secondary-color: #ff652f; // orange
+
+// Resets : 
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin:0;
+}
+
+// Transitions:
+
+@mixin transition-ease{
+    transition: all 0.5s ease-in-out;
+}
+
+// Create a function that will give an appropriate color to our text:
+
+@function set-text-color($color){
+   @if (lightness($color))> 40% {     //--> evaluate the lightness of the color we're passing it.
+    @return #000;
+   }      
+
+   @else {
+     @return #fff;
+   }  
+}
+
+
+// To make some responsive changes: (media queries)
+
+@mixin media-xs{ // xsmall size
+  @media screen and (min-width:300px){
+    @content;
+  }
+}
+
+@mixin media-sm{ // small size
+    @media screen and (min-width:400px){
+      @content;
+    }
+}
+
+
+@mixin media-md{   // medium size     
+    @media screen and (min-width:768px){  // (max-width) --> below || (min-width) --> over
+      @content;
+    }
+}
+@mixin media-lg{   // large size
+    @media screen and (min-width:1024px){
+      @content;
+    }
+}
+@mixin media-xl{   // extra large size
+    @media screen and (min-width:1600px){
+      @content;
+    }
+}
+
+
+// Check responsive.scss

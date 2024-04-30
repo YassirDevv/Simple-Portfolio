@@ -1,0 +1,175 @@
+@media (hover: none) {
+  .projects{
+    &__item{
+      &::after{
+        content: '';
+        position:absolute;
+        top: 100%; // Push it all the way to the bottom --> initially is going to be under its element = overflow:hidden --> We dont see it for now but when wanna hover we want to pull up from the bottom.
+        left:0;
+        height:100%;
+        width:100%;
+        background-color: $secondary-color;
+        opacity:0;
+        @include transition-ease;
+    }
+
+    &.click {
+        &::after {
+            top:0;
+            opacity: 0.9;
+        }
+        .projects__btns{
+          top:0;
+        .projects__btn{
+            opacity:1;
+            visibility: visible;
+      }
+    }}
+ }
+     &__btns{
+      top:100px;
+      visibility: hidden;
+     }
+     &__btn{
+     opacity:0;
+     color:set-text-color($secondary-color);
+     @include transition-ease;
+
+
+  &.click{
+      color:set-text-color(set-text-color($secondary-color)); // --> Black
+      
+  }
+}}}
+
+/*@media (hover: none) {
+  .projects{
+    &__item{
+      &::after{
+        content: '';
+        position:absolute;
+        top:0 ; // Push it all the way to the bottom --> initially is going to be under its element = overflow:hidden --> We dont see it for now but when wanna hover we want to pull up from the bottom.
+        left:0;
+        height:100%;
+        width:100%;
+        background-color: $secondary-color ;
+        
+    }
+    .projects__btn{
+      opacity: 0.9;
+    }}
+  
+
+  &__btn{
+    
+    color:set-text-color(set-text-color($secondary-color)) !important;
+    
+}}}*/
+
+.projects{
+    padding-bottom: 2rem;
+  
+      &__bio-image{
+          height:30vh;
+          width:100%;
+  
+          background: // If the image is too bright/white:
+        linear-gradient(
+      to right,
+      rgba($primary-color,0.9),
+      rgba($primary-color,0.3)
+    ),
+    url('../img/bg.jpg') center top;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;  // to get a title and a paragraph
+    align-items:center;       // center text on the top of the page
+    justify-content: flex-end;   // "center" the content in the center of the div
+     
+    .text-secondary{
+        font-size: 2rem;
+        margin-bottom: 2rem;
+
+    }
+   } 
+  
+     &__items{
+      width:60vw;
+      margin: 2rem auto 0 auto; // top, right , bottom, left. --> center div
+      display: grid;
+      grid-template-columns: 1fr; // 1fractional unit (grid and flexbox layouts) 1fr 2fr 1fr --> units available of space
+      grid-gap: 2rem;   //(20px 10px --> 20 for gap between rows 10 for columns in this case both)
+}
+  
+&__item{
+    position: relative;
+    border-bottom: 5px solid $secondary-color;
+    overflow: hidden;  // --> hide the 
+    cursor: pointer;
+
+    img{
+        width:100%;
+    }
+  
+    
+    &::after{
+        content: '';
+        position:absolute;
+        top:100%; // Push it all the way to the bottom --> initially is going to be under its element = overflow:hidden --> We dont see it for now but when wanna hover we want to pull up from the bottom.
+        left:0;
+        height:100%;
+        width:100%;
+        background-color: $secondary-color;
+        opacity:0;
+        @include transition-ease;
+    }
+
+    &:hover{
+        &::after {
+            top:0;
+            opacity:0.9;
+        }
+        .projects__btn{
+            opacity:1;
+      }
+    }
+ }
+ 
+  
+ 
+     &__btns{
+        position: absolute;
+        top: 0;
+        height:100%;
+        width:100%;
+        z-index:1;
+        display: grid;
+        grid-template-columns: repeat(2,1fr) ;  //Preview -> left || Github -> right
+        align-items: center;
+        text-align: center;
+     }
+
+     &__btn{
+        opacity:0;
+        color:set-text-color($secondary-color);
+        @include transition-ease;
+
+   
+        &:hover{
+            color:set-text-color(set-text-color($secondary-color)); // --> Black
+            
+        }
+     }
+
+  .social-icons{
+    display:flex;
+    flex-direction: column;
+  }
+}
+  
+  footer {
+    transform:
+    rotate(90deg)
+    translate(-3rem,-5rem);
+  }
+ 

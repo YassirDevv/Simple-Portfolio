@@ -1,0 +1,28 @@
+.home{
+  height:100%;
+  padding-top:40vh;
+  overflow: hidden;   // We don't want any scroll bars on the homepage --> it should always fit.
+  align-items:center;
+  text-align:center;
+  background: // If the image is too bright/white:
+  linear-gradient(
+    to right,
+    rgba($primary-color,0.9),
+    rgba($primary-color,0.3)
+  ),
+  url('../img/bg.jpg') center top;
+  background-size: cover;
+  //background-repeat: no-repeat;
+
+  &__name{
+    font-size:5rem;
+    padding-bottom: 1rem;  // the next element moves
+    margin-bottom:1rem;       // the actual element moves
+    border-bottom: 2px solid set-text-color($primary-color);
+
+    &--last{
+        color:$secondary-color;
+        font-weight: 700;
+    }
+  }
+}

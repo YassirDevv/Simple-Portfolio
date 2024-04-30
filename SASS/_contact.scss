@@ -1,0 +1,36 @@
+.contact{
+    height:100%;
+    padding-top:40vh;
+    overflow: hidden;   // We don't want any scroll bars on the homepage --> it should always fit.
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: // If the image is too bright/white:
+    linear-gradient(
+      to right,
+      rgba($primary-color,0.9),
+      rgba($primary-color,0.3)
+    ),
+    url('../img/bg.jpg') center top;
+    background-size: cover;
+    //background-repeat: no-repeat;
+  
+    h2{
+       
+        font-size:3rem;
+        margin-bottom:2rem;
+  }
+
+  &__list{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    font-size:1.5rem;
+  }
+  .social-icons{
+    position: initial;  //Cuz previously set position: absolute or position: fixed on an element, applying position: initial would revert it back to its default position behavior.
+    margin-top: 2rem;;
+  }
+}
+
+// column-rule: 2px solid red ; -->  The column rule is a vertical line that separates columns within an element.

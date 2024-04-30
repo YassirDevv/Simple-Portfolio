@@ -1,0 +1,67 @@
+.about{
+  padding-bottom: 2rem;
+
+    &__bio-image{
+        height:50%;
+        width:100%;
+
+        background: // If the image is too bright/white:
+      linear-gradient(
+    to right,
+    rgba($primary-color,0.9),
+    rgba($primary-color,0.3)
+  ),
+  url('../img/bg.jpg') center top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;  // to get a title and a paragraph
+  align-items:center;       // center text on the top of the page
+  justify-content: flex-end;   // "center" the content in the center of the div
+ 
+  p{
+    margin-bottom: 2rem;
+   }
+ } 
+
+   &__bio{
+    width:80%;
+    text-align: center;
+
+     .text-secondary{
+      padding-bottom: 1rem;
+     }
+   }
+
+   .jobs{
+    width:60vw;
+    margin: 2rem auto 0 auto; // top, right , bottom, left.
+    display: grid;
+    grid-template-columns: 1fr; // 1fractional unit (grid and flexbox layouts) 1fr 2fr 1fr --> units available of space
+    grid-gap: 2rem;   //(20px 10px --> 20 for gap between rows 10 for columns in this case both)
+    
+    &__job{
+      background: lighten($primary-color,10%);
+      padding: 0.5rem; // all around
+      border-bottom: 5px solid $secondary-color;
+
+      h2,h3{
+        margin: 0.5rem 0; // 0 left and right
+      }
+      h6{
+        margin: 0.3rem 0 ;
+      }
+    }
+   }
+
+
+.social-icons{
+  display:flex;
+  flex-direction: column;
+}
+}
+
+footer {
+  transform:
+  rotate(90deg)
+  translate(-3rem,-5rem);
+}
